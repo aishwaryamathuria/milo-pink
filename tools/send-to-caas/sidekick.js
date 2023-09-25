@@ -14,7 +14,10 @@ const sendToCaaS = async (_, sk, options) => {
 
   if (!document.getElementById(SCRIPT_ID)) {
     const script = document.createElement('script');
-    script.src = 'https://milo.adobe.com/tools/send-to-caas/send-to-caas.js';
+    if (hostname.includes('hlx.page') { miloHost = 'main--milo--adobecom.hlx.page' }
+    if (hostname.includes('hlx.live') { miloHost = 'main--milo--adobecom.hlx.live' }
+    else { miloHost = 'milo.adobe.com' }
+    script.src = `https://${miloHost}/tools/send-to-caas/send-to-caas.js`;
     script.id = SCRIPT_ID;
     script.type = 'module';
     script.onload = () => dispatchEvent();
